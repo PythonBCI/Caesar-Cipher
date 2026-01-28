@@ -26,3 +26,19 @@ encrypted_text = 'Pbhentr vf sbhaq va hayvxryl cynprf.'
 
 decrypted_text = decrypt(encrypted_text, 13)
 print(decrypted_text)
+
+while True:
+    choice = input("Would you like to (e)ncrypt or (d)ecrypt? (q to quit): ").lower()
+    
+    if choice == 'q':
+        break
+    elif choice == 'e':
+        text = input("Enter message: ")
+        shift = int(input("Enter shift (1-25): "))
+        print(f"Encrypted: {encrypt(text, shift)}")
+    elif choice == 'd':
+        text = input("Enter encrypted message: ")
+        shift = int(input("Enter shift (1-25): "))
+        print(f"Decrypted: {decrypt(text, shift)}")
+    else:
+        print("Invalid choice")
