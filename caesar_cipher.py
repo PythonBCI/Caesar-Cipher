@@ -6,8 +6,10 @@ text = 'hello world'
 encrypted_text = text.translate(translation_table)
 
 def caesar(text, shift):
-    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+   alphabet = 'abcdefghijklmnopqrstuvwxyz'
     shifted_alphabet = alphabet[shift:] + alphabet[:shift]
-    translation_table = str.maketrans(alphabet, shifted_alphabet)
-    encrypted_text = text.translate(translation_table)
-    print(encrypted_text)
+    translation_table = str.maketrans(alphabet + alphabet.upper(), shifted_alphabet + shifted_alphabet.upper())
+    return text.translate(translation_table)
+
+encrypted_text = caesar('freeCodeCamp', 3)
+print(encrypted_text)
